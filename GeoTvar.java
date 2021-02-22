@@ -22,7 +22,7 @@ public class GeoTvar {
     }
     //metody
         //Obvod
-    public void vypocetObvodu(String tvar, double a, double b, double c, double z, double v, double pi, double r) {
+    public double vypocetObvodu(String tvar, double a, double b, double c, double z, double v, double pi, double r) {
         this.tvar = tvar;
         this.a = a;
         this.b = b;
@@ -34,17 +34,17 @@ public class GeoTvar {
 
         return switch (tvar) {
 
-            case OBDELNIK  -> (a * b );
-            case CTVEREC -> (a * a);
-            case TROJUHELNIK -> ((v * z)/2);
-            case KRUH ->  (pi * r * r);
+            case "OBDELNIK"  -> (a * b );
+            case "CTVEREC" -> (a * a);
+            case "TROJUHELNIK" -> ((v * z)/2);
+            case "KRUH" ->  (pi * r * r);
             default -> throw new RuntimeException("Spatny tvar");
         };
 
     }
 
     //obsah
-    public void vypocetObsahu(String tvar, double a, double b, double c, double z, double v, double pi, double r) {
+    public double vypocetObsahu(String tvar, double a, double b, double c, double z, double v, double pi, double r) {
             this.tvar = tvar;
             this.a = a;
             this.b = b;
@@ -56,10 +56,10 @@ public class GeoTvar {
 
         return switch (tvar) {
 
-            case OBDELNIK -> (a * b );
-            case CTVEREC -> (a * a );
-            case TROJUHELNIK -> ((v * z)/2);
-            case KRUH ->  (pi * r * r);
+            case "OBDELNIK" -> (a * b );
+            case "CTVEREC" -> (a * a );
+            case "TROJUHELNIK" -> ((v * z)/2);
+            case "KRUH" ->  (pi * r * r);
             default -> throw new RuntimeException("Spatny tvar");
         };
     }
